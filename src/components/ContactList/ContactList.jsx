@@ -1,14 +1,21 @@
 import React from "react";
+import css from "./ContactList.module.css"
 
 
 export default function ContactList({ contacts , onDelete}) {
     return (
-         <ul>
+        <ul className={css.phonebook__list}>
           {contacts.map(contact => (
-        <li key={contact.id}>
-        <span>{contact.name}</span>
+        <li
+        className={css.phonebook__item}  
+        key={contact.id}>
+        <span
+        className={css.phonebook__name}        
+        >{contact.name}</span>
         <span>{contact.number}</span>
-        <button onClick={() => onDelete(contact.id)}>Delete</button>      
+              <button
+        className={css.phonebook__deleteBtn}        
+        onClick={() => onDelete(contact.id)}>Delete</button>      
           </li>
         ))}
         </ul>
