@@ -32,7 +32,6 @@ class App extends Component {
     
   };
    
-
   
    onChangeFilter = (e) => {
      this.setState({filter : e.currentTarget.value});

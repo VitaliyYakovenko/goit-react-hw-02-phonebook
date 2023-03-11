@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types';
 import { nanoid } from 'nanoid'
 import css from "./ContactForm.module.css"
 
@@ -10,9 +11,12 @@ class ContactForm extends Component {
         name: '',
         number: '',
     }; 
-    
+     
     oldName = [];
-    
+
+    static propTypes = {
+        onSubmit: PropTypes.func.isRequired,
+    }
      
     onInputChange = (e) => {
         const { name, value } = e.currentTarget
